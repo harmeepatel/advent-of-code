@@ -18,26 +18,14 @@ fn main() {
             continue;
         }
         cal = cal + line.parse::<i32>().unwrap();
-
-        // println!("{}", line.unwrap().parse::<usize>().unwrap());
     }
-    let mut max = 0;
-    for cal in cals.iter() {
-        if *cal > max {
-            max = *cal
-        }
-    }
+    let max = cals.iter().max().unwrap();
     dbg!(max);
 
     // b
     let mut total = 0;
     for _ in 0..3 {
-        let mut max = 0;
-        for cal in cals.iter() {
-            if *cal > max {
-                max = *cal
-            }
-        }
+        let max = *cals.iter().max().unwrap();
         total = total + max;
         cals.remove(cals.iter().position(|&x| x == max).unwrap());
     }

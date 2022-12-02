@@ -19,6 +19,8 @@ fn main() {
         }
         cal = cal + line.parse::<i32>().unwrap();
     }
+    cals.sort();
+    cals.reverse();
     let max = cals.iter().max().unwrap();
     dbg!(max);
 

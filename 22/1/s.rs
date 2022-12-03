@@ -1,17 +1,10 @@
-use std::{
-    fs::File,
-    io::{prelude::*, BufReader},
-};
-
 fn main() {
-    let f = File::open("input.txt").unwrap();
-    let f = BufReader::new(f);
+    let f = include_str!("input.txt");
 
     // a
     let mut cals: Vec<i32> = Vec::new();
     let mut cal = 0;
     for line in f.lines() {
-        let line = line.ok().unwrap();
         if line.is_empty() {
             cals.push(cal);
             cal = 0;
